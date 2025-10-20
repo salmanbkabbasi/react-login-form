@@ -12,7 +12,7 @@ export default function Login({ setIsLoggedIn }) {
   );
 
   const handleLogin = (values) => {
-    if (values.username === "admin" && values.password === "Admin@123") {
+    if (values.username === "Testing" && values.password === "Testing@123") {
       setIsLoggedIn(true);
       alert("Login successful!");
       navigate("/home");
@@ -26,7 +26,7 @@ export default function Login({ setIsLoggedIn }) {
   const validate = Yup.object({
     username: Yup.string()
       .min(5, "Must be at least 5 characters!")
-      .required("Please enter your username!"),
+      .required("Username required!"),
 
     password: Yup.string()
       .min(8, "Password must be at least 8 characters long!")
@@ -34,7 +34,7 @@ export default function Login({ setIsLoggedIn }) {
         passwordRegex,
         "Password must contain uppercase, lowercase, number, and special character!"
       )
-      .required("Please enter your password!"),
+      .required("Password required!"),
 
     remember: Yup.boolean(),
   });
