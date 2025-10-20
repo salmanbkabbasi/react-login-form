@@ -16,10 +16,10 @@ export default function Login({ setIsLoggedIn }) {
       setIsLoggedIn(true);
       alert("Login successful!");
       navigate("/home");
-      return true; // ✅ success
+      return true;
     } else {
       alert("Invalid username or password!");
-      return false; // ❌ failed
+      return false;
     }
   };
 
@@ -44,7 +44,7 @@ export default function Login({ setIsLoggedIn }) {
       initialValues={{ username: "", password: "", remember: false }}
       validationSchema={validate}
       onSubmit={(values, actions) => {
-        const success = handleLogin(values); // ✅ check login result
+        const success = handleLogin(values);
 
         if (success) {
           localStorage.setItem("userData", JSON.stringify(values));
