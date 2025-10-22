@@ -25,15 +25,9 @@ export default function Login({ setIsLoggedIn }) {
 
   const validate = Yup.object({
     username: Yup.string()
-      .min(5, "Must be at least 5 characters!")
       .required("Username required!"),
 
     password: Yup.string()
-      .min(8, "Password must be at least 8 characters long!")
-      .matches(
-        passwordRegex,
-        "Password must contain uppercase, lowercase, number, and special character!"
-      )
       .required("Password required!"),
 
     remember: Yup.boolean(),
@@ -90,7 +84,7 @@ export default function Login({ setIsLoggedIn }) {
                 marginBottom: "20px",
               }}
             >
-              Welcome!
+              Welcome! Please login to continue.
             </h1>
 
             <Form.Item
