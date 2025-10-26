@@ -1,10 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
+import { Flex, Input } from 'antd';
 
 export default function Navbar() {
   return (
     <>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">SELAYE</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{marginLeft: "10px"}}>
+  <a class="navbar-brand" href="#" style={{marginRight: "40px"}}>SELAYE</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -15,27 +16,10 @@ export default function Navbar() {
         <Link class="nav-link" to="#">HomeForm <span class="sr-only">(current)</span></Link>
       </li>
       <li class="nav-item">
-        <Link class="nav-link" to="#">Link</Link>
+        <Link class="nav-link" to="#" style={{ marginLeft: "20px"}}>Users</Link>
       </li>
-      <li class="nav-item dropdown">
-        <Link class="nav-link dropdown-toggle" to="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </Link>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <Link class="dropdown-item" to="#">Action</Link>
-          <Link class="dropdown-item" to="#">Another action</Link>
-          <div class="dropdown-divider"></div>
-          <Link class="dropdown-item" to="#">Something else here</Link>
-        </div>
-      </li>
-      <li class="nav-item">
-        <Link class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</Link>
-      </li>
+          <Input.Search placeholder="Filled" variant="filled" style={{marginLeft: "40px"}} />
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
 </nav>
     </>
