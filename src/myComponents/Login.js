@@ -12,7 +12,7 @@ export default function Login({ setIsLoggedIn }) {
   );
 
   const handleLogin = (values) => {
-    if (values.username === "Testing" && values.password === "Testing@123") {
+    if (values.username === "admin" && values.password === "Admin@123") {
       setIsLoggedIn(true);
       alert("Login successful!");
       navigate("/home");
@@ -25,9 +25,15 @@ export default function Login({ setIsLoggedIn }) {
 
   const validate = Yup.object({
     username: Yup.string()
-      .required("Username required!"),
+      // .min(5, "Must be at least 5 characters!")
+      .required("Username!"),
 
     password: Yup.string()
+      // .min(8, "Password must be at least 8 characters long!")
+      // .matches(
+      //   passwordRegex,
+      //   "Password must contain uppercase, lowercase, number, and special character!"
+      // )
       .required("Password required!"),
 
     remember: Yup.boolean(),
@@ -84,7 +90,7 @@ export default function Login({ setIsLoggedIn }) {
                 marginBottom: "20px",
               }}
             >
-              Welcome! Please login to continue.
+              Welcome! Please, login to continue.
             </h1>
 
             <Form.Item
@@ -96,7 +102,7 @@ export default function Login({ setIsLoggedIn }) {
             >
               <Input
                 name="username"
-                placeholder="Enter your username!"
+                placeholder="username"
                 value={values.username}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -112,7 +118,7 @@ export default function Login({ setIsLoggedIn }) {
             >
               <Input.Password
                 name="password"
-                placeholder="Enter your password!"
+                placeholder="password"
                 value={values.password}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -149,7 +155,10 @@ export default function Login({ setIsLoggedIn }) {
             <div style={{ textAlign: "center" }}>
               <a href="/" style={{ color: "black", textDecoration: "none" }}>
                 Forgot password?
-              </a>
+              </a><br /><br />
+            </div>
+            <div>
+              <p style={{textAlign: "center", fontSize: "10px", color: "gray"}}>Engineered by CodeHolic.</p>
             </div>
           </Form>
         </div>
